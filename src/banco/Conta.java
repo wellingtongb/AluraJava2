@@ -1,6 +1,6 @@
 package banco;
 
-public class Conta {
+public abstract class Conta {
 
 	protected double saldo;
 
@@ -25,6 +25,5 @@ public class Conta {
 		
 		this.saldo += ( this.saldo * taxa);
 	}
-	
 	
 }
