@@ -8,13 +8,17 @@ public class TestaAtualizadorDeContas {
         Conta cc = new ContaCorrente();
         Conta cp = new ContaPoupanca();
 
-    
+
+       
+
         cc.Deposita(1000); 
         cp.Deposita(1000);
 
         AtualizadorDeContas adc = new AtualizadorDeContas(0.01);
 
-     
+
+ 
+
         adc.roda(cc);
         adc.roda(cp);
 
