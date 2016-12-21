@@ -12,11 +12,11 @@ public class AtualizadorDeContas {
     public void roda(Conta c) {
     	System.out.println("===============================");
         // aqui você imprime o saldo anterior
-    	System.out.println("Saldo anterior: " + c.getSaldo());
+    	System.out.printf("Saldo anterior: %.2f", c.getSaldo());
         // atualiza a conta com a taxa selic,
     	c.Atualiza(this.selic);
         // e depois imprime o saldo final
-    	System.out.println("Saldo Atualizado: " + c.getSaldo());
+    	System.out.printf("Saldo Atualizado: %.2f", c.getSaldo());
         // lembrando de somar o saldo final ao atributo saldoTotal
     	this.saldoTotal += c.getSaldo();
     	
