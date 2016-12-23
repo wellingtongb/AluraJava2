@@ -24,13 +24,22 @@ public class TestaContas {
 		System.out.println(cp.getSaldo());
 		
 		//testando a classe de exceptions
-		Conta ce = new ContaCorrente();
+		/*Conta ce = new ContaCorrente();
 		ce.Deposita(250.0);
 		try {
 			ce.Saca(300);
 		} catch (SaldoInsuficienteException e) {
 			System.out.println(e.getMessage());
+		}*/
+		
+		//testando metodo deposita com exceptions
+		Conta cf = new ContaCorrente();
+		try {
+			cf.Deposita(-100);
+		} catch (ValorInvalidoException e) {
+			System.out.println(e.getMessage());
 		}
+		
 		
 	}
 }
