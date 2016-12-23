@@ -22,5 +22,15 @@ public class TestaContas {
 
 		System.out.println(cc.getSaldo());
 		System.out.println(cp.getSaldo());
+		
+		//testando a classe de exceptions
+		Conta ce = new ContaCorrente();
+		ce.Deposita(250.0);
+		try {
+			ce.Saca(300);
+		} catch (SaldoInsuficienteException e) {
+			System.out.println(e.getMessage());
+		}
+		
 	}
 }

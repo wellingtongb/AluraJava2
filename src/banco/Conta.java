@@ -15,7 +15,7 @@ public abstract class Conta {
 	
 	public void Saca(double valorSacar){
 		if(this.saldo < valorSacar){
-			System.out.println("Operação inválida. Saldo insuficiente.");
+			throw new SaldoInsuficienteException("Saldo insuficiente, tente um valos menor.");
 		}else{
 			this.saldo -= valorSacar;
 		}			
