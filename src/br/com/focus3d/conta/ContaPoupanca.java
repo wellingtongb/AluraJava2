@@ -1,6 +1,6 @@
 package br.com.focus3d.conta;
 
-public class ContaPoupanca extends Conta {
+public class ContaPoupanca extends Conta implements Comparable<ContaPoupanca> {
 	
 	public ContaPoupanca() {
 		// TODO Auto-generated constructor stub
@@ -31,6 +31,16 @@ public class ContaPoupanca extends Conta {
 	public void Saca(double valorSacar) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	//sobescrevendo o metodo de comparação da interface comparable
+	@Override
+	public int compareTo(ContaPoupanca cpParaComparar) {
+		if(this.numero < cpParaComparar.numero)
+			return -1;
+		if(this.numero > cpParaComparar.numero)
+			return 1;
+		return 0;
 	}
 
 

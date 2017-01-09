@@ -31,12 +31,6 @@ public abstract class Conta {
 
 
 
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-
-
-
 	/**
 	 *  acrescenta um valor ao saldo da conta, não podendo este valor ser menor que zero
 	 * @param valor
