@@ -5,7 +5,7 @@ package br.com.focus3d.conta;
  * @author Wellington
  *
  */
-public abstract class Conta {
+public abstract class Conta implements Comparable<Conta> {
 
 	protected double saldo;
 	protected int numero;
@@ -29,7 +29,9 @@ public abstract class Conta {
 		return numero;
 	}
 
-
+	public String getNome() {
+		return nome;
+	}
 
 	/**
 	 *  acrescenta um valor ao saldo da conta, não podendo este valor ser menor que zero
@@ -64,14 +66,62 @@ public abstract class Conta {
 	@Override
 	public String toString() {
 		
-		return "Este objeto é uma conta com o saldo de: "+ this.saldo;
+		return "Numero"+ this.numero + " Nome "+ this.nome + " Saldo "+ this.saldo;
 	}
 	
+	/*//antigo metodo equals
 	@Override
 	public boolean equals(Object obj) {
 		Conta outraConta = (Conta) obj;
 		
 		return (this.numero == outraConta.numero && 
 				this.nome.equals(outraConta.nome));
+	}*/
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + numero;
+		return result;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Conta other = (Conta) obj;
+		if (numero != other.numero)
+			return false;
+		return true;
+	}
+	
+	public void Imprime() {
+		System.out.println("numero Conta "+ this.numero);
+		System.out.println("Saldo conta "+ this.saldo);
+		
+	}
+	
+	//sobescrevendo o metodo de comparação da interface comparable comparando numero da conta
+/*	@Override
+	public int compareTo(Conta cpParaComparar) {
+		if(this.numero < cpParaComparar.numero)
+			return -1;
+		if(this.numero > cpParaComparar.numero)
+			return 1;
+		return 0;
+	}*/
+	
+	//sobescrevendo o metodo de comparação da interface comparable comparando nome da conta
+	@Override
+	 public int compareTo(Conta outra) {
+	        return this.nome.compareTo(outra.nome);
+	    }
+	
+	
 }
